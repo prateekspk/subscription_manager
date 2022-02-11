@@ -7,14 +7,17 @@ const ModalBackground = styled.div`
 width:100vw;
 height:100vh;
 position:fixed;
+
 background-color:rgba(0,0,0,0.5);`
+
 const ModalBody = styled.div`
-
 background-color:white;
-margin:10% auto;
-padding:20px;
+margin:auto;
+border-radius: 20px;
+/* padding:20px; */
+z-index: 1000;
+/* transform: translate(-50%,-50%); */
 width:50%
-
 `
 
 export default function Modal({show,setShow,children}) {

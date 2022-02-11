@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import SubDisplayCard from './SubDisplayCard';
 
 
-export default function DisplaySubList({SubList,selectedFrequency}) {
+export default function DisplaySubList({SubList,selectedFrequency,handleSubDelete,handleSubEdit}) {
 
 
 
@@ -17,7 +17,7 @@ export default function DisplaySubList({SubList,selectedFrequency}) {
       <Typography>All Subscriptions</Typography>
       { 
        SubList.map(sub=>{
-           return <SubDisplayCard key={sub.id} selectedFrequency={selectedFrequency} sub={sub}/>       
+           return <SubDisplayCard key={sub.id} selectedFrequency={selectedFrequency} sub={sub} handleSubDelete={handleSubDelete} handleSubEdit={handleSubEdit}/>       
        })   
       }
   </div>;

@@ -2,8 +2,9 @@ import React from 'react';
 
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
+import { Button } from '@mui/material';
 
-export default function SubDisplayCard({sub,selectedFrequency}) {
+export default function SubDisplayCard({sub,selectedFrequency,handleSubDelete,handleSubEdit}) {
 
 const mapping = {
   Day:"dailyFees",
@@ -18,6 +19,8 @@ const mapping = {
         <Card style={{backgroundColor:sub.colour}} sx={{ minWidth: 275 }}>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>{sub.subName}</Typography>
             <Typography sx={{ fontSize: 14 }} variant='h5' gutterBottom>{sub[mapping[selectedFrequency]]} per {selectedFrequency}</Typography>
+            <Button onClick={()=>{handleSubDelete(sub.id)}}>Delete</Button>
+            <Button onClick={()=>{handleSubEdit(sub.id)}}>Edit</Button>
             </Card>
   </div>;
 }

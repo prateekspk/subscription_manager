@@ -10,6 +10,8 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import ColourPicker from "./ColourPicker";
 import Modal from "./Modal";
 import { v4 as uuidv4 } from 'uuid';
+import SubDisplayCard from "./SubDisplayCard";
+import "./AddSubForm.css"
 
 
 
@@ -96,6 +98,11 @@ const calculateAllFrequencyFees = (amount,frequency)=>{
 
   return (
     <>
+    <div className="modalHeader"><h3>Add New Subscription</h3></div>
+    
+
+
+    <SubDisplayCard sub={subscription} selectedFrequency= {subscription.billingPeriodFrequency}/>
       <form>
         <div
           style={{
@@ -103,7 +110,7 @@ const calculateAllFrequencyFees = (amount,frequency)=>{
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor:subscription.colour
+            // backgroundColor:subscription.colour
           }}
         >
              <label>Subscription Charge</label>
