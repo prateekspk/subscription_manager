@@ -7,3 +7,31 @@
     justify-content: center;
 
 }
+
+.formGrid{
+    display: grid;
+    gap: 1.5rem;
+    margin: 10px;
+    grid-template-columns: repeat(4,1fr) ;
+}
+
+.grid-span-2{
+    grid-column: span 2;
+}
+.grid-span-3{
+    grid-column: span 3;
+}
+
+.inputFormField{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rowFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

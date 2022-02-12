@@ -3,7 +3,7 @@ display:flex;
 justify-content: space-evenly;
 padding: 5px;
 border-bottom: 0.1px solid lightgray;
-
+position: fixed;
 
 }
 
