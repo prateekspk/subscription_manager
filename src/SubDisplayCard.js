@@ -18,7 +18,7 @@ const mapping = {
       <h6>{sub.subAmount}</h6> */}
         <Card style={{backgroundColor:sub.colour}} sx={{ minWidth: 275 }}>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>{sub.subName}</Typography>
-            {isSubForm?<Typography sx={{ fontSize: 14 }} variant='h5' gutterBottom>{sub.subAmount} per {selectedFrequency}</Typography>:<>
+            {isSubForm?<Typography sx={{ fontSize: 14 }} variant='h5' gutterBottom>{sub.subAmount} {sub.subAmount?`per ${selectedFrequency}`:`No Amount entered`}</Typography>:<>
             <Typography sx={{ fontSize: 14 }} variant='h5' gutterBottom>{sub[mapping[selectedFrequency]]} per {selectedFrequency}</Typography>
             
             <Button onClick={()=>{handleSubDelete(sub.id)}}>Delete</Button>

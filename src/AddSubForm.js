@@ -193,6 +193,7 @@ export default function AddSubForm({ handleSubListChange }) {
             <Select
               value={subscription.billingPeriodFrequency}
               name="billingPeriodFrequency"
+              id="billingPeriodFrequency"
               onChange={(e) =>
                 setSubscription({
                   ...subscription,
@@ -214,6 +215,7 @@ export default function AddSubForm({ handleSubListChange }) {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 name="firstPaymentDate"
+                id="firstPaymentDate"
                 label="Eg . Today?"
                 value={subscription.firstPaymentDate}
                 onChange={(newValue) => {
@@ -242,6 +244,7 @@ export default function AddSubForm({ handleSubListChange }) {
             )}
             </div>
             <Button
+            id="colourpickerbutton"
               variant="outlined"
               onClick={() => setShowColourpickModal(true)}
             >
@@ -252,7 +255,7 @@ export default function AddSubForm({ handleSubListChange }) {
             </Modal>
            
 
-            <Button variant="outlined" onClick={handleSubmit}>
+            <Button id="saveSubscription" variant="outlined" onClick={handleSubmit}>
               Save Subscription
             </Button>
           </div>

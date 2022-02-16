@@ -7,7 +7,7 @@ const colourList = ["#f44336","#00bcd4","#03a9f4","#2196f3","#3f51b5","#673ab7",
   return <div>
 
       {colourList.map((colour)=>{
-          return <button onClick={()=>setSubColour(colour)} style={{backgroundColor:colour, width:"50px",height: "50px",borderRadius:"25px"}}> </button>
+          return <button id={colour} onClick={()=>setSubColour(colour)} style={{backgroundColor:colour, width:"50px",height: "50px",borderRadius:"25px"}}> </button>
       })}
   </div>;
 }

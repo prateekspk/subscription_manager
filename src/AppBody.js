@@ -8,24 +8,33 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import DisplaySubList from './DisplaySubList';
 import DisplayTotalHeader from './DisplayTotalHeader';
+import {useSelector, useDispatch} from 'react-redux'
+import { addSub } from './Redux/SubSlice'
+
 import Header from './Header';
 
 export default function AppBody() {
 
-    const [SubList,setSubList]=useState([])
+    // const [SubList,setSubList]=useState([])
+
+    const {SubList} = useSelector((state)=>state.SubList)
+  const dispatch = useDispatch()
   const [showModal,setShowModal] = useState(false)
   const [selectedFrequency,setSelectedFrequency] = useState('')
    
 
   const handleSubListChange =(sub)=>{
-    setSubList([...SubList,sub])
+    dispatch(addSub(sub))
+    
+    // setSubList([...SubList,sub])
     setShowModal(false)
   }
 
   const handleSubDelete = (id) =>{
-    setSubList(SubList.filter(sub=>{
-        return sub.id !==id
-    }))
+    // setSubList(SubList.filter(sub=>{
+    //     return sub.id !==id
+    // }))
+    console.log("De;eted")
   }
   const handleSubEdit = (id)=>{
 console.log("Delete the ID : "+ id)
